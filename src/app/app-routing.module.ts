@@ -10,6 +10,7 @@ import {PaymentFormComponent} from "./plans/components/payment-form/payment-form
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
 import {TechnicalReviewComponent} from "./buyer/components/technical-review/technical-review.component";
 import {SendDataComponent} from "./buyer/components/send-data/send-data.component";
+import {PayComponent} from "./buyer/components/pay/pay.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'payment-form', component: PaymentFormComponent },
   {path: 'technical-review', component: TechnicalReviewComponent},
   {path: 'send-data', component: SendDataComponent},
+  {path: 'pay', component: PayComponent},
   {path: '**', component: PageNotFoundComponent },
 ];
 

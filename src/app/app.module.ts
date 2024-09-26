@@ -42,6 +42,7 @@ import { PlanComponent } from './plans/components/plan/plan.component';
 import { PaymentFormComponent } from './plans/components/payment-form/payment-form.component';
 import { TechnicalReviewComponent } from './buyer/components/technical-review/technical-review.component';
 import { SendDataComponent } from './buyer/components/send-data/send-data.component';
+import { PayComponent } from './buyer/components/pay/pay.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { SendDataComponent } from './buyer/components/send-data/send-data.compon
     PaymentFormComponent,
     TechnicalReviewComponent,
     SendDataComponent,
+    PayComponent,
 
   ],
   imports: [
