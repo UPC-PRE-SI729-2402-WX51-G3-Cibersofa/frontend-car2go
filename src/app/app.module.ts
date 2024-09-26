@@ -41,6 +41,7 @@ import { ForgotPasswordComponent } from './register/components/forgot-password/f
 import { PlanComponent } from './plans/components/plan/plan.component';
 import { PaymentFormComponent } from './plans/components/payment-form/payment-form.component';
 import { TechnicalReviewComponent } from './buyer/components/technical-review/technical-review.component';
+import { SendDataComponent } from './buyer/components/send-data/send-data.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { TechnicalReviewComponent } from './buyer/components/technical-review/te
     PlanComponent,
     PaymentFormComponent,
     TechnicalReviewComponent,
+    SendDataComponent,
 
   ],
   imports: [
