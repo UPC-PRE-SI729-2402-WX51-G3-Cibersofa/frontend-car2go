@@ -8,6 +8,7 @@ import {ForgotPasswordComponent} from "./register/components/forgot-password/for
 import {PlanComponent} from "./plans/components/plan/plan.component";
 import {PaymentFormComponent} from "./plans/components/payment-form/payment-form.component";
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
+import {TechnicalReviewComponent} from "./buyer/components/technical-review/technical-review.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'plan', component: PlanComponent },
   {path: 'payment-form', component: PaymentFormComponent },
   {path: 'page-not-found',component:PageNotFoundComponent},
+  {path: 'technical-review', component: TechnicalReviewComponent},
 ];
 
 @NgModule({

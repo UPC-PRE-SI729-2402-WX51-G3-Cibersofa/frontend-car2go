@@ -40,6 +40,7 @@ import { RegisterComponent } from './register/components/register/register.compo
 import { ForgotPasswordComponent } from './register/components/forgot-password/forgot-password.component';
 import { PlanComponent } from './plans/components/plan/plan.component';
 import { PaymentFormComponent } from './plans/components/payment-form/payment-form.component';
+import { TechnicalReviewComponent } from './buyer/components/technical-review/technical-review.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PaymentFormComponent } from './plans/components/payment-form/payment-fo
     ForgotPasswordComponent,
     PlanComponent,
     PaymentFormComponent,
+    TechnicalReviewComponent,
 
   ],
   imports: [
