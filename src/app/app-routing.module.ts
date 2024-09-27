@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'forgot-password', component: ForgotPasswordComponent },
-  {path: 'car-details', component: CarDetailsComponent },
   {path: 'car-listing-form', component: CarListingFormComponent },
+  {path: 'car-details', component: CarDetailsComponent },
   {path: '**', component: PageNotFoundComponent }
 ];
 
