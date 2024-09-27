@@ -1,31 +1,3 @@
-.container {
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 20px;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-h1.title {
-  font-size: 32px;
-  font-weight: bold;
-  display: flex;
-  gap: 8px;
-}
-
-.black-text {
-  color: #000;
-}
-
-.yellow-text {
-  color: #ffcc00;
-}
-
 .underline {
   width: 100px;
   height: 4px;
@@ -125,4 +97,32 @@ h1.title {
 
 .send-button:hover {
   background-color: #ff9900;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+h1.title {
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  gap: 8px;
+}
+
+.black-text {
+  color: #000;
+}
+
+.yellow-text {
+  color: #ffcc00;
 }
