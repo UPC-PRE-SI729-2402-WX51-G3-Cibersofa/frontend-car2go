@@ -87,5 +87,18 @@
         </select>
       </div>
     </form>
+    <div class="summary-column" *ngIf="selectedPlan">
+      <h2>Your Products</h2>
+      <div class="product-summary">
+        <p><strong>{{ selectedPlan.name }}</strong></p>
+        <ul>
+          <li *ngFor="let feature of selectedPlan.features">{{ feature }}</li>
+        </ul>
+        <hr>
+        <p><strong>Total to pay: S/.{{ selectedPlan.price }}</strong></p>
+
+        <button type="submit" (click)="onSubmit()">Make Payment</button>
+      </div>
+    </div>
   </div>
 </div>
