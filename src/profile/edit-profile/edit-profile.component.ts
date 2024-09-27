@@ -16,3 +16,4 @@ import { MatInput } from '@angular/material/input';
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.css']
 })
+export class EditProfileComponent {}
