@@ -19,11 +19,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'forgot-password', component: ForgotPasswordComponent },
-  {path: 'plan', component: PlanComponent },
-  {path: 'payment-form', component: PaymentFormComponent },
   {path: 'technical-review', component: TechnicalReviewComponent},
   {path: 'send-data', component: SendDataComponent},
   {path: 'pay', component: PayComponent},
+  {path: 'payment-form', component: PaymentFormComponent },
+  {path: 'plan', component: PlanComponent },
   {path: '**', component: PageNotFoundComponent },
 ];
 
