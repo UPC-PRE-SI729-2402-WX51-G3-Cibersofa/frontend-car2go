@@ -63,22 +63,22 @@
               <mat-label>Details</mat-label>
               <input matInput [(ngModel)]="method.details" placeholder="Payment Details">
             </mat-form-field>
-            <button mat-icon-button color="warn" (click)="markForDeletion(i)">
+            <button (click)="markForDeletion(i)">
               <span class="material-symbols-outlined">delete</span>
             </button>
           </ng-container>
         </div>
 
-        <button mat-raised-button color="primary" (click)="addNewPaymentMethod()" [disabled]="userData.paymentMethods.length >= 3">
+        <button (click)="addNewPaymentMethod()" [disabled]="userData.paymentMethods.length >= 3">
           Add Payment Method
         </button>
       </div>
 
 
 
-    <button mat-raised-button color="primary" (click)="editMode ? onSave() : toggleEditMode()">
-      {{ editMode ? 'Save' : 'Edit' }}
-    </button>
+      <button mat-raised-button color="primary" (click)="editMode ? onSave() : toggleEditMode()">
+        {{ editMode ? 'Save' : 'Edit' }}
+      </button>
+    </div>
   </div>
- </div>
 </div>
