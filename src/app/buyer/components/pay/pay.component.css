@@ -82,6 +82,10 @@
   margin-bottom: 20px;
 }
 
+.payment-form {
+  margin-top: 20px;
+}
+
 .form-field label {
   display: block;
   font-size: 14px;
@@ -89,9 +93,6 @@
   margin-bottom: 5px;
 }
 
-.payment-form {
-  margin-top: 20px;
-}
 
 .form-field input {
   width: 100%;
