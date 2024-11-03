@@ -60,11 +60,6 @@
   text-align: center;
 }
 
-.location-title {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
 .location-section input {
   width: 100%;
   padding: 10px;
@@ -73,6 +68,13 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
+
+.location-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+
 
 .profile-icon {
   margin-top: 15px;
