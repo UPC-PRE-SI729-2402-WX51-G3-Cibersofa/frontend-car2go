@@ -1,21 +1,30 @@
+<!-- Toolbar component -->
 <app-toolbar></app-toolbar>
 
+<!-- Main container for the mechanic revision section -->
 <div class="container">
+  <!-- Message displayed when there are no pending cars for review -->
   <div *ngIf="pendingCars.length === 0">
     <p>No cars pending for review.</p>
   </div>
 
+  <!-- Loop through each pending car and display its details -->
   <div *ngFor="let car of pendingCars">
+    <!-- Card component for each car -->
     <mat-card class="card">
       <div class="row">
+        <!-- Column for car image -->
         <div class="col-50 image-column">
           <div class="car-gallery">
+            <!-- Car image -->
             <img [src]="car.image" alt="{{ car.brand }} {{ car.model }}">
           </div>
         </div>
 
+        <!-- Column for car details and owner information -->
         <div class="col-50">
           <div class="car-data">
+            <!-- List of car details (year, transmission, engine) -->
             <div class="column-list">
               <ul>
                 <li><i class="material-symbols-outlined">event</i><span>{{ car.year }}</span></li>
@@ -23,6 +32,7 @@
                 <li><i class="material-symbols-outlined">bolt</i><span>{{ car.engine }}</span></li>
               </ul>
             </div>
+            <!-- List of car details (location, color, mileage) -->
             <div class="column-list">
               <ul>
                 <li><i class="material-symbols-outlined">location_on</i><span>{{ car.location }}</span></li>
@@ -32,12 +42,14 @@
             </div>
           </div>
 
+          <!-- Owner information section -->
           <div class="owner-info">
             <h4>Owner Information</h4>
             <p><strong>Name:</strong> {{ car.name }}</p>
             <p><strong>Phone:</strong> {{ car.phone }}</p>
             <p><strong>Email:</strong> {{ car.email }}</p>
           </div>
+          <!-- Checkbox for approving the car review -->
           <div class="checkbox-container">
             <label class="checkbox-label">
               <input type="checkbox" [(ngModel)]="review.isApproved" class="styled-checkbox"/>
@@ -45,17 +57,18 @@
               Approved
             </label>
           </div>
-
         </div>
       </div>
 
+      <!-- Section for adding review notes and creating the review -->
       <div class="row">
         <div class="review-section">
           <p><strong>Review Document</strong></p>
+          <!-- Textarea for adding review notes -->
           <textarea [(ngModel)]="car.reviewNotes" placeholder="Add review notes here..."></textarea>
         </div>
 
-
+        <!-- Button to create the car review -->
         <button (click)="createCarReview(car, car.reviewNotes)">Create Review</button>
       </div>
     </mat-card>
