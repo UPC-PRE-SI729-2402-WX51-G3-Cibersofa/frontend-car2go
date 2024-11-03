@@ -56,17 +56,16 @@
   top: 20px;
   right: 20px;
 }
-
-.profile-icon img {
-  border-radius: 50%;
-}
-
 .payment-container {
   margin-bottom: 20px;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon img {
+  border-radius: 50%;
 }
 
 .payment-title {
