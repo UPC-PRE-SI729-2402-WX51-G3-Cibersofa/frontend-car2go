@@ -75,7 +75,6 @@
 }
 
 
-
 .profile-icon {
   margin-top: 15px;
 }
@@ -89,6 +88,10 @@
   margin-top: 20px;
 }
 
+.send-button:hover {
+  background-color: #ff9900;
+}
+
 .send-button {
   background-color: #ffcc00;
   border: none;
@@ -100,11 +103,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-.send-button:hover {
-  background-color: #ff9900;
-}
-
 .container {
   margin: 0 auto;
   max-width: 1000px;
