@@ -33,7 +33,7 @@
         <div class="car-description">
           <h4>
             {{ car?.brand }} {{ car?.model }}
-            <button (click)="openEditModal()" class="edit-button">
+            <button (click)="openEditModal()" class="edit-button" aria-label="Edit car details">
               <mat-icon>edit</mat-icon>
             </button>
           </h4>
@@ -77,14 +77,14 @@
     <mat-card class="card">
       <div class="car-gallery">
         <div class="car-images">
-          <button (mousedown)="prevImage()" class="carousel-nav prev">&#10094;</button>
+          <button (mousedown)="prevImage()" class="carousel-nav prev" aria-label="Previous image">&#10094;</button>
           <div class="main-image"
                (mousedown)="onMouseDown($event)"
                (mousemove)="onMouseMove($event)"
                (mouseup)="onMouseUp($event)">
             <img [src]="mainImage" alt="Product Image" (dragstart)="stopDragging()" />
           </div>
-          <button (mousedown)="nextImage()" class="carousel-nav next">&#10095;</button>
+          <button (mousedown)="nextImage()" class="carousel-nav next" aria-label="Next Image">&#10095;</button>
 
           <div class="thumbnails"
                #thumbnailsContainer
@@ -96,7 +96,8 @@
                  [src]="image"
                  alt="Thumbnail"
                  (click)="changeImage(i)"
-                 [class.active]="i === currentIndex" />
+                 [class.active]="i === currentIndex" 
+                 aria-label="Thumbnail image {{ i+1 }}"/>
           </div>
         </div>
       </div>
@@ -137,7 +138,7 @@
         </div>
 
         <div class="buttons">
-          <button [routerLink]="['/send-data', car?.id]" class="offer-button">
+          <button [routerLink]="['/send-data', car?.id]" class="offer-button" aria-label="Add an offer for the car">
             {{ 'ADD_OFFER' | translate }}
           </button>
         </div>
@@ -150,7 +151,7 @@
 
 <div class="modal" [ngClass]="{'show': isModalOpen}" (click)="closeOnOutsideClick($event)">
   <div class="modal-content" (click)="$event.stopPropagation()">
-    <span class="close" (click)="closeEditModal()">&times;</span>
+    <span class="close" (click)="closeEditModal()" aria-label="Close modal">&times;</span>
 
     <div class="container">
       <form [formGroup]="carForm" (ngSubmit)="editCar()">
@@ -292,7 +293,7 @@
                 <span class="highlight">{{ 'UPDATE_CAR' | translate }}</span>:
               </p>
               <div class="new-images">
-                <button type="button" (click)="triggerFileInput()">
+                <button type="button" (click)="triggerFileInput()" aria-label="Upload new images for the car">
                   <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-width="2" stroke="#ffffff" d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125" stroke-linejoin="round" stroke-linecap="round"></path>
                     <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M17 15V18M17 21V18M17 18H14M17 18H20"></path>
@@ -309,7 +310,7 @@
               </div>
             </div>
             <div class="submit-button">
-              <button type="submit" class="btn btn-primary">{{ 'UPDATE_CAR' | translate }}</button>
+              <button type="submit" class="btn btn-primary" aria-label="Update car">{{ 'UPDATE_CAR' | translate }}</button>
             </div>
           </div>
         </div>

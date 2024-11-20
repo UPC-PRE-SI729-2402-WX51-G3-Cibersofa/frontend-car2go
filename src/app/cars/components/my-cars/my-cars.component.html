@@ -2,7 +2,7 @@
   <div *ngIf="cars.length > 0" class="car-header">
     <div class="icon-wrapper">
       <div class="icon-circle">
-        <i class="fa fa-car"></i>
+        <i class="fa fa-car" aria-label="Car icon"></i>
       </div>
       <div class="header-underline"></div>
     </div>
@@ -15,11 +15,11 @@
   <div class="car-container">
     <div *ngIf="cars.length === 0" class="no-cars-message">
       <div class="icon-wrapper">
-        <i class="fa fa-heart-broken"></i>
+        <i class="fa fa-heart-broken" aria-label="No cars listed icon"></i>
       </div>
       <p>{{ 'NO_CARS_LISTED' | translate }} <a routerLink="/car-listing-form">{{ 'CREATE_NEW_CAR' | translate }}</a>.</p>
     </div>
-    <div *ngFor="let car of cars" class="car-item" (click)="navigateToCarDetails(car.id)">
+    <div *ngFor="let car of cars" class="car-item" (click)="navigateToCarDetails(car.id)" aria-label="View details if {{ car.brand }} {{ car.model }}">
       <div class="thumb-content">
         <div class="car-banner"></div>
         <div class="thumb-inner">
@@ -33,8 +33,8 @@
           <a>
             <h4>{{ car.brand }} {{ car.model }}</h4>
           </a>
-          <button class="delete-button" (click)="deleteCar(car.id); $event.stopPropagation()">
-            <i class="fa fa-trash"></i>
+          <button class="delete-button" (click)="deleteCar(car.id); $event.stopPropagation()" aria-label="Delete {{ car.brand }} {{ car.model }}">
+            <i class="fa fa-trash" aria-label="Delete car"></i>
           </button>
         </div>
         <p>{{ car.status }}</p>

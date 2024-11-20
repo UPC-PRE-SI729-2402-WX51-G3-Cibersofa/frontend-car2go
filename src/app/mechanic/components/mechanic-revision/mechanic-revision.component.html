@@ -1,14 +1,14 @@
 <div class="container">
-  <div *ngIf="pendingCars.length === 0">
+  <div *ngIf="pendingCars.length === 0" aria-label="No cars pending review">
     <p>{{ 'NO_CARS_PENDING_REVIEW' | translate }}</p>
   </div>
 
   <div *ngFor="let car of pendingCars">
-    <mat-card class="card">
+    <mat-card class="card" aria-label="Car information for {{ car.brand }} {{ car.model }}">
       <div class="row">
         <div class="col-50 image-column">
           <div class="car-gallery">
-            <img [src]="car.image" alt="{{ car.brand }} {{ car.model }}">
+            <img [src]="car.image" alt="{{ car.brand }} {{ car.model }}" aria-label="Image of {{ car.brand }} {{ car.model}}">
           </div>
         </div>
 
@@ -16,16 +16,16 @@
           <div class="car-data">
             <div class="column-list">
               <ul>
-                <li><i class="material-symbols-outlined">event</i><span>{{ car.year }}</span></li>
-                <li><i class="material-symbols-outlined">auto_transmission</i><span>{{ car.transmission }}</span></li>
-                <li><i class="material-symbols-outlined">bolt</i><span>{{ car.engine }}</span></li>
+                <li><i class="material-symbols-outlined" aria-label="Car year">event</i><span>{{ car.year }}</span></li>
+                <li><i class="material-symbols-outlined" aria-label="Transmission type">auto_transmission</i><span>{{ car.transmission }}</span></li>
+                <li><i class="material-symbols-outlined" aria-label="Engine type">bolt</i><span>{{ car.engine }}</span></li>
               </ul>
             </div>
             <div class="column-list">
               <ul>
-                <li><i class="material-symbols-outlined">location_on</i><span>{{ car.location }}</span></li>
-                <li><i class="material-symbols-outlined">invert_colors</i><span>{{ car.color }}</span></li>
-                <li><i class="material-symbols-outlined">road</i><span>{{ car.mileage }}</span></li>
+                <li><i class="material-symbols-outlined" aria-label="Car Location">location_on</i><span>{{ car.location }}</span></li>
+                <li><i class="material-symbols-outlined" aria-label="Car color">invert_colors</i><span>{{ car.color }}</span></li>
+                <li><i class="material-symbols-outlined" aria-label="Mileage">road</i><span>{{ car.mileage }}</span></li>
               </ul>
             </div>
           </div>
@@ -37,7 +37,7 @@
             <p><strong>{{ 'OWNER_EMAIL' | translate }}:</strong> {{ car.email }}</p>
           </div>
           <div class="checkbox-container">
-            <label class="checkbox-label">
+            <label class="checkbox-label" aria-label="Approve review">
               <input type="checkbox" [(ngModel)]="review.isApproved" class="styled-checkbox"/>
               <span class="custom-checkbox"></span>
               {{ 'APPROVED' | translate }}
@@ -52,7 +52,7 @@
           <textarea [(ngModel)]="car.reviewNotes" placeholder="{{ 'REVIEW_NOTES_PLACEHOLDER' | translate }}"></textarea>
         </div>
 
-        <button (click)="createCarReview(car, car.reviewNotes)">{{ 'CREATE_REVIEW' | translate }}</button>
+        <button (click)="createCarReview(car, car.reviewNotes)" aria-label="Create review">{{ 'CREATE_REVIEW' | translate }}</button>
       </div>
     </mat-card>
   </div>

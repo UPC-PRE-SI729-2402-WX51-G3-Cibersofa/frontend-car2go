@@ -1,5 +1,5 @@
 <header [ngClass]="{'scrolled-header': isScrolled}" class="site-header">
-  <header *ngIf="userRole === 'ROLE_SELLER'" class="site-header">
+  <header *ngIf="userRole === 'ROLE_SELLER'" class="site-header" aria-label="Seller navigation">
     <nav class="navbar">
       <div class="logo">
         <a><img src="assets/logo.png" alt="Car 2 Go"></a>
@@ -64,7 +64,7 @@
 
 
   <!-- Navbar para Buyer -->
-  <header *ngIf="userRole === 'ROLE_BUYER'" class="site-header">
+  <header *ngIf="userRole === 'ROLE_BUYER'" class="site-header" aria-label="Buyer navigation">
     <nav class="navbar">
       <div class="logo">
         <a><img src="assets/logo.png" alt="Car 2 Go"></a>
@@ -127,7 +127,7 @@
   </header>
 
   <!-- Navbar para Mechanic -->
-  <header *ngIf="userRole === 'ROLE_MECHANIC'" class="site-header">
+  <header *ngIf="userRole === 'ROLE_MECHANIC'" class="site-header" aria-label="Mechanic navigation">
     <nav class="navbar">
       <div class="logo">
         <a><img src="assets/logo.png" alt="Car 2 Go"></a>

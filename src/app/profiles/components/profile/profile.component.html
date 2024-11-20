@@ -1,6 +1,6 @@
 <section class="profile-background">
   <div class="profile-banner">
-    <img src="assets/background-profile.png" alt="Background Banner" class="banner-image">
+    <img src="assets/background-profile.png" alt="Profile Background Banner" class="banner-image">
   </div>
 
   <div class="profile-card">
@@ -74,7 +74,7 @@
       <div class="profile-payment-methods">
         <h3>{{ 'RECENT_FAVORITES' | translate }}</h3>
         <div class="payment-methods-container">
-          <div *ngFor="let favorite of recentFavorites" class="payment-method" (click)="navigateToCarDetails(favorite.vehicle.id)">
+          <div *ngFor="let favorite of recentFavorites" class="payment-method" (click)="navigateToCarDetails(favorite.vehicle.id)" aria-label="{{ favorite.vehicle.brand }} {{ favorite.vehicle.model }} - View Details">
             <div class="bank-logo">
               <img [src]="favorite.vehicle.images[0]" alt="{{ favorite.vehicle.name }}" class="img-thumbnail">
             </div>
@@ -113,7 +113,7 @@
               <div class="payment-edit-fields">
                 <mat-form-field appearance="outline" class="full-width">
                   <mat-label>{{ 'TYPE' | translate }}</mat-label>
-                  <mat-select [(ngModel)]="method.type" placeholder="{{ 'SELECT_BANK_TYPE' | translate }}">
+                  <mat-select [(ngModel)]="method.type" placeholder="{{ 'SELECT_BANK_TYPE' | translate }}" aria-label="Select payment method">
                     <mat-option value="BBVA">BBVA</mat-option>
                     <mat-option value="BCP">BCP</mat-option>
                     <mat-option value="Scotiabank">Scotiabank</mat-option>

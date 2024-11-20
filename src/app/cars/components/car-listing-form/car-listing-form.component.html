@@ -149,8 +149,8 @@
     </form>
 
   <div class="submit-button">
-    <button mat-raised-button color="primary" type="button" (click)="openPublicationPreview()">{{ 'PREVIEW_CAR' | translate }}</button>
-    <button mat-raised-button color="accent" type="submit" (click)="onSubmit()">{{ 'PUBLISH_CAR' | translate }}</button>
+    <button mat-raised-button color="primary" type="button" (click)="openPublicationPreview()" aria-label="Preview car">{{ 'PREVIEW_CAR' | translate }}</button>
+    <button mat-raised-button color="accent" type="submit" (click)="onSubmit()" aria-label="Publish car">{{ 'PUBLISH_CAR' | translate }}</button>
   </div>
 
 

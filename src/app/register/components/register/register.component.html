@@ -4,10 +4,10 @@
 
     <h1>Get Started Now</h1>
 
-    <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()" aria-label="Sign up form">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Name</mat-label>
-        <input matInput formControlName="name" placeholder="Enter your name">
+        <input matInput formControlName="name" placeholder="Enter your name" aria-label="Enter your name">
         <mat-error *ngIf="signUpForm.get('name')?.hasError('required')">
           Name is required
         </mat-error>
@@ -16,7 +16,7 @@
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" placeholder="Enter your password">
+        <input matInput type="password" formControlName="password" placeholder="Enter your password" aria-label="Enter your password">
         <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
           Password is required
         </mat-error>
@@ -26,15 +26,15 @@
       </mat-form-field>
 
       <div class="checkbox-group">
-        <mat-checkbox (change)="onRoleChange('ROLE_SELLER')">Seller</mat-checkbox>
-        <mat-checkbox (change)="onRoleChange('ROLE_BUYER')">Buyer</mat-checkbox>
-        <mat-checkbox (change)="onRoleChange('ROLE_MECHANIC')">Mechanic</mat-checkbox>
+        <mat-checkbox (change)="onRoleChange('ROLE_SELLER')" aria-label="Seller role">Seller</mat-checkbox>
+        <mat-checkbox (change)="onRoleChange('ROLE_BUYER')" aria-label="Buyer role">Buyer</mat-checkbox>
+        <mat-checkbox (change)="onRoleChange('ROLE_MECHANIC')" aria-label="Mechanic role">Mechanic</mat-checkbox>
       </div>
 
-      <button mat-raised-button color="primary" class="btn-signup" type="submit">Sign Up</button>
+      <button mat-raised-button color="primary" class="btn-signup" type="submit" aria-label="Submit sign up form">Sign Up</button>
     </form>
 
-    <div class="social-login">
+    <div class="social-login" aria-label="Social login section">
       <div class="separator">
         <span></span>
         <p>Or</p>
@@ -42,16 +42,16 @@
       </div>
 
       <div class="social-login-buttons">
-        <button mat-stroked-button class="google-login">
-          <img src="assets/google-logo.svg" alt="Google Logo" width="20px" height="20px"> Sign up with Google
+        <button mat-stroked-button class="google-login" aria-label="Sign up with Google">
+          <img src="assets/google-logo.svg" alt="Google Logo" width="20px" height="20px" > Sign up with Google
         </button>
-        <button mat-stroked-button class="apple-login">
+        <button mat-stroked-button class="apple-login" aria-label="Sign up with Apple">
           <img src="assets/apple-logo.svg" alt="Apple Logo" width="20px" height="20px"> Sign up with Apple
         </button>
       </div>
     </div>
 
-    <p class="login-footer">
+    <p class="login-footer" aria-label="Footer information">
       Have an account? <a href="/login">Sign In</a>
     </p>
   </div>

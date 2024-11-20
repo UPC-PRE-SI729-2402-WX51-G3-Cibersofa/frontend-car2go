@@ -14,7 +14,7 @@
           {{ feature | translate }}
         </li>
       </ul>
-      <button class="choose-plan" (click)="selectPlan(plan)">{{ 'CHOOSE_PLAN_BUTTON' | translate }}</button>
+      <button class="choose-plan" (click)="selectPlan(plan)" aria-label="Choose the {{ plan.name }} plan">{{ 'CHOOSE_PLAN_BUTTON' | translate }}</button>
     </div>
   </div>
 </section>

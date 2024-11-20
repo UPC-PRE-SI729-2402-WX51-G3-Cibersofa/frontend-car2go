@@ -1,15 +1,15 @@
 <div class="container">
   <div class="header">
-    <h1 class="title">
+    <h1 class="title" aria-label="Send data form">
       <span class="black-text">SEND</span>
       <span class="yellow-text">DATA</span>
     </h1>
-    <div class="underline"></div>
+    <div class="underline" aria-hidden="true"></div>
   </div>
 
   <div class="form-container">
     <div class="form-section">
-      <h2 class="form-title">DATA</h2>
+      <h2 class="form-title" aria-label="Personal Information">DATA</h2>
 
       <div class="form-field">
         <label>Name</label>
@@ -23,25 +23,25 @@
 
       <div class="form-field">
         <label>Telephone</label>
-        <input type="text" placeholder="Placeholder" />
+        <input type="text" placeholder="Placeholder" aria-label="Enter your telephone number"/>
       </div>
 
       <div class="form-field">
         <label>DNI</label>
-        <input type="text" placeholder="Placeholder" />
+        <input type="text" placeholder="Placeholder"  aria-label="Enter your DNI"/>
       </div>
     </div>
 
     <div class="location-section">
       <div class="profile-icon">
-        <img src="https://via.placeholder.com/50" alt="Profile Icon" />
+        <img src="https://via.placeholder.com/50" alt=" User profile Icon" />
       </div>
-      <h2 class="location-title">Location</h2>
-      <input type="text" placeholder="Placeholder" />
+      <h2 class="location-title" aria-label="Location information">Location</h2>
+      <input type="text" placeholder="Placeholder" aria-label="Enter your location" />
     </div>
   </div>
 
   <div class="button-container">
-    <button class="send-button" (click)="redirectToPay()">Send</button>
+    <button class="send-button" (click)="redirectToPay()" aria-label="Send the form data">Send</button>
   </div>
 </div>

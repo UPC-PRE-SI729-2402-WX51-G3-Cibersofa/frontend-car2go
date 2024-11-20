@@ -7,20 +7,20 @@
   </div>
 
   <div *ngFor="let car of reviewedCars" class="card">
-    <div class="card-content">
+    <div class="card-content" aria-label="Car review for {{ car.brand }} {{ car.model}}">
       <div class="img-container">
         <img [src]="car.image || 'assets/default_image.jpg'" alt="{{ car.brand }} {{ car.model }}">
       </div>
 
-      <div class="info-container">
-        <div class="owner-details">
+      <div class="info-container" aria-label="Car information">
+        <div class="owner-details" aria-label="Owner details">
           <h4>Owner Information</h4>
           <p><i class="material-icons">person</i><strong>Name:</strong> {{ car.name }}</p>
           <p><i class="material-icons">phone</i><strong>Phone:</strong> {{ car.phone }}</p>
           <p><i class="material-icons">email</i><strong>Email:</strong> {{ car.email }}</p>
         </div>
 
-        <div *ngIf="car.reviews && car.reviews.length > 0" class="review-details">
+        <div *ngIf="car.reviews && car.reviews.length > 0" class="review-details" aria-label="Review details">
           <h4>Review Information</h4>
           <p><i class="material-icons">person</i><strong>Reviewed By:</strong> {{ car.reviews[car.reviews.length - 1].reviewerInfo.name}}</p>
           <p><i class="material-icons">event</i><strong>Review Date:</strong> {{ car.reviews[car.reviews.length - 1].reviewDate | date }}</p>

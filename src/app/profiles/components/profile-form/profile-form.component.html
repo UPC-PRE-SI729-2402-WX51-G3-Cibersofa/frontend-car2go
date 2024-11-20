@@ -40,7 +40,7 @@
       </div>
 
       <div class="new-images">
-        <button type="button" (click)="triggerFileInput()">
+        <button type="button" (click)="triggerFileInput()" aria-label="Add photo">
           <svg
             aria-hidden="true"
             stroke="currentColor"
@@ -66,7 +66,7 @@
           </svg>
           {{ 'ADD_PHOTO' | translate }}
         </button>
-        <input id="newImages" type="file" (change)="onFileSelected($event)" class="hidden-file-input">
+        <input id="newImages" type="file" (change)="onFileSelected($event)" class="hidden-file-input" aria-label="Upload Image">
 
         <div *ngIf="photoPreview" class="image-preview-container">
           <img [src]="photoPreview" alt="Preview" class="image-preview" />
@@ -81,7 +81,7 @@
         <div *ngFor="let method of profile.paymentMethods; let i = index" class="form-row">
           <mat-form-field appearance="outline" class="form-group">
             <mat-label>{{ 'PAYMENT_TYPE' | translate }}</mat-label>
-            <mat-select [(ngModel)]="method.type" name="type-{{i}}" required (ngModelChange)="checkFormValidity()">
+            <mat-select [(ngModel)]="method.type" name="type-{{i}}" required (ngModelChange)="checkFormValidity()" aria-label="Select payment type">
               <mat-option *ngFor="let bank of banks" [value]="bank">
                 {{ bank }}
               </mat-option>
@@ -106,7 +106,7 @@
             </mat-error>
           </mat-form-field>
 
-          <button mat-icon-button color="warn" type="button" (click)="removePaymentMethod(i)">
+          <button mat-icon-button color="warn" type="button" (click)="removePaymentMethod(i)" aria-label="Remove payment method" >
             <mat-icon>delete</mat-icon>
           </button>
         </div>
@@ -117,7 +117,7 @@
       </div>
 
       <div class="form-actions">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!isFormValid">{{ 'SAVE_CHANGES' | translate }}</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!isFormValid" aria-label="Save changes">{{ 'SAVE_CHANGES' | translate }}</button>
       </div>
     </form>
   </div>

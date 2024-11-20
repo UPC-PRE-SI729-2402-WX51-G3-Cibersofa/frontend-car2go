@@ -58,15 +58,15 @@
     <label for="transactionNumber">Número de Transacción</label>
     <input type="text" id="transactionNumber" [(ngModel)]="paymentMethods.transactionNumber" placeholder="Ej. 0987654321">
     <div class="button-container">
-      <button type="button" (click)="prevStep()">Anterior</button>
-      <button type="button" (click)="nextStep()">Siguiente</button>
+      <button type="button" (click)="prevStep()" aria-label="Previous">Anterior</button>
+      <button type="button" (click)="nextStep()" aria-label="Next">Siguiente</button>
     </div>
   </div>
 
 
   <div *ngIf="currentStep === 3 && !isLoading" class="step-content slide-in">
     <h2>Resumen de Pago</h2>
-    <div class="confirmation-info">
+    <div class="confirmation-info" aria-label="Payment summary">
       <p><strong>Nombre del Comprador:</strong> {{ userData.name }}</p>
       <p><strong>Correo Electrónico:</strong> {{ userData.email }}</p>
       <p><strong>Número de Cuenta:</strong> {{ paymentMethods.accountNumber }}</p>
@@ -74,7 +74,7 @@
       <p>El pago ha sido procesado exitosamente. Confirme su compra.</p>
     </div>
     <div class="button-container">
-      <button type="button" (click)="confirmPayment()">Confirmar Pago</button>
+      <button type="button" (click)="confirmPayment()" aria-label="Confirm payment">Confirmar Pago</button>
     </div>
   </div>
 </div>

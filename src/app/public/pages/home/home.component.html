@@ -2,7 +2,7 @@
   <div class="car-wrapper">
     <div class="car-header">
       <div class="icon-wrapper">
-        <div class="icon-circle">
+        <div class="icon-circle" aria-label="Car icon">
           <i class="fa fa-car"></i>
         </div>
         <div class="header-underline"></div>
@@ -19,6 +19,7 @@
           class="car-item"
           *ngIf="car.status === 'REVIEWED'"
           (click)="viewCarDetails(car.id)"
+          aria-label="View details for {{ car.brand }} {{ car.model }}"
         >
           <div class="thumb-content">
             <div class="thumb-inner">
@@ -32,10 +33,10 @@
 
           <div class="down-content">
             <div class="title-favorite-wrapper">
-              <a>
+              <a aria-label="Car details for {{ car.brand }} {{ car.model }}">
                 <h4>{{ car.brand }} {{car.model}}</h4>
               </a>
-              <button class="favorite-button" (click)="addToFavorites(car.id); $event.stopPropagation()">
+              <button class="favorite-button" (click)="addToFavorites(car.id); $event.stopPropagation()" aria-label="Add {{ car.brand }} {{ car.model }} to favorites">
                 <i class="fa fa-star"></i>
               </button>
             </div>
@@ -73,7 +74,7 @@
     </div>
 
     <div class="cta-section">
-      <a routerLink="/car-listing" class="cta-button">{{ 'EXPLORE_MORE_CARS' | translate }}</a>
+      <a routerLink="/car-listing" class="cta-button" aria-label="Explore more cars">{{ 'EXPLORE_MORE_CARS' | translate }}</a>
     </div>
   </div>
 </section>
@@ -83,7 +84,7 @@
     <header class="header">
       <h1>{{ 'MANAGE_INSPECTIONS' | translate }} <span class="highlight">{{ 'VEHICLE_INSPECTIONS' | translate }}</span></h1>
       <p>{{ 'TRACK_INSPECTIONS' | translate }}</p>
-      <button class="cta-button" (click)="startInspection()">{{ 'START_INSPECTION' | translate }}</button>
+      <button class="cta-button" (click)="startInspection()" aria-label="Start a new vehicle inspection">{{ 'START_INSPECTION' | translate }}</button>
     </header>
 
     <section class="summary-cards">
@@ -103,7 +104,7 @@
 
     <section class="vehicle-list" *ngIf="!loading && pendingCars.length > 0; else noPendingCars">
       <h2>{{ 'ASSIGNED_VEHICLES' | translate }}</h2>
-      <table mat-table [dataSource]="pendingCars" class="mat-elevation-z1">
+      <table mat-table [dataSource]="pendingCars" class="mat-elevation-z1" aria-label="Pending vehicles inspection">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> {{ 'ID' | translate }} </th>
           <td mat-cell *matCellDef="let car"> {{ car.id }} </td>
@@ -131,7 +132,7 @@
 
     <section class="vehicle-list" *ngIf="!loading && certifiedCars.length > 0; else noCertifiedCars">
       <h2>{{ 'CERTIFIED_VEHICLES' | translate }}</h2>
-      <table mat-table [dataSource]="reviews" class="mat-elevation-z8">
+      <table mat-table [dataSource]="reviews" class="mat-elevation-z8" aria-label="Certified vehicles reviews">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> {{ 'ID' | translate }} </th>
           <td mat-cell *matCellDef="let review"> {{ review.vehicle.id }} </td>

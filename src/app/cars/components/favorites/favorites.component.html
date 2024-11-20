@@ -3,7 +3,7 @@
     <div *ngIf="favorites.length > 0" class="car-header">
       <div class="icon-wrapper">
         <div class="icon-circle">
-          <i class="fa fa-star"></i>
+          <i class="fa fa-star" aria-label="Favorite Icon"></i>
         </div>
         <div class="header-underline"></div>
       </div>
@@ -15,13 +15,13 @@
 
     <div *ngIf="favorites.length === 0" class="no-cars-message">
       <div class="icon-wrapper">
-        <i class="fa fa-heart-broken"></i>
+        <i class="fa fa-heart-broken" aria-label="No favorites icon"></i>
       </div>
       <p>{{ 'NO_FAVORITES_MESSAGE' | translate }} <a routerLink="/car-listing">{{ 'EXPLORE_CARS' | translate }}</a> {{ 'TO_ADD_FAVORITES' | translate }}</p>
     </div>
 
     <div class="car-container">
-      <div class="car-item-horizontal" *ngFor="let favorite of paginatedCars" (click)="viewCarDetails(favorite.vehicle.id)">
+      <div class="car-item-horizontal" *ngFor="let favorite of paginatedCars" (click)="viewCarDetails(favorite.vehicle.id)" aria-label="View details of {{ favorite.vehicle.brand }} {{ favorite.vehicle.model}}">
         <div class="image-wrapper-horizontal">
           <img [src]="favorite.vehicle.images[0]" alt="{{ favorite.vehicle.name }}" class="img-thumbnail">
         </div>
@@ -30,8 +30,8 @@
             <a>
               <h4>{{ favorite.vehicle.brand }} {{ favorite.vehicle.model }}</h4>
             </a>
-            <button class="delete-button" (click)="removeFavorite(favorite.vehicle.id); $event.stopPropagation()">
-              <i class="fa fa-trash"></i>
+            <button class="delete-button" (click)="removeFavorite(favorite.vehicle.id); $event.stopPropagation()" aria-label="Remove from favorites">
+              <i class="fa fa-trash" aria-label="Remove from favorites"></i>
             </button>
           </div>
           <span>{{ favorite.vehicle.price | currency }}</span>
@@ -71,7 +71,9 @@
         class="page-button"
         [class.active]="currentPage === page"
         *ngFor="let page of [].constructor(totalPages); let i = index"
-        (click)="changePage(i + 1)">
+        (click)="changePage(i + 1)"
+        aria-label="Go to page {{ i + 1 }}"
+        >
         {{ i + 1 }}
       </button>
     </div>

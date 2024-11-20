@@ -1,18 +1,18 @@
 <div class="container">
   <div class="header">
     <div>
-      <h1 class="title">
+      <h1 class="title" aria-label="Technical review section">
         <span class="black-text">{{ 'TECHNICAL' | translate }}</span>
         <span class="yellow-text">{{ 'REVIEW' | translate }}</span>
       </h1>
-      <div class="underline"></div>
+      <div class="underline" aria-hidden="true"></div>
     </div>
     <div class="button-container">
       <button class="redirect-button" (click)="redirectToMTC()">{{ 'TECHNICAL_DOCUMENT' | translate }}</button>
     </div>
   </div>
 
-  <div class="content">
+  <div class="content" aria-label="Informational content">
     <p>{{ 'CERTIFIED_VEHICLE_SEAL_INFO' | translate }}</p>
     <p>{{ 'SUBSCRIPTION_PLAN_BENEFITS' | translate }}</p>
     <p>{{ 'OBSERVATION_REGULARIZATION_INFO' | translate }}</p>

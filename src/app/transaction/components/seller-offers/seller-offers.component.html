@@ -6,9 +6,9 @@
 <div *ngIf="!isLoading">
   <!-- Filtro por Estado -->
   <div class="filter-container">
-    <mat-form-field appearance="fill" class="filter-dropdown">
+    <mat-form-field appearance="fill" class="filter-dropdown" aria-label="Filter by status">
       <mat-label>Filtrar por Estado</mat-label>
-      <mat-select [(value)]="selectedStatus" (selectionChange)="applyFilter()">
+      <mat-select [(value)]="selectedStatus" (selectionChange)="applyFilter()" aria-label="Select status">
         <mat-option value="ALL">Todos</mat-option>
         <mat-option value="PENDING">Pendiente</mat-option>
         <mat-option value="COMPLETED">Completado</mat-option>
@@ -20,7 +20,7 @@
   <div *ngIf="userRole === 'ROLE_SELLER' && filteredTransactions.length > 0">
     <h3>Mis Ofertas Recibidas</h3>
     <div class="transaction-container">
-      <mat-card *ngFor="let transaction of filteredTransactions" class="transaction-card horizontal-card">
+      <mat-card *ngFor="let transaction of filteredTransactions" class="transaction-card horizontal-card" aria-label="Transaction {{ transaction.transactionId }}">
         <div class="horizontal-card-content">
           <img
             mat-card-image
@@ -29,7 +29,7 @@
             class="vehicle-image"
           />
 
-          <div class="transaction-details">
+          <div class="transaction-details" aria-label="Transaction details">
             <mat-card-content>
               <h4>Detalles de la Transacción</h4>
               <p><strong>ID Transacción:</strong> {{ transaction.transactionId }}</p>
@@ -39,7 +39,7 @@
             </mat-card-content>
           </div>
 
-          <div class="buyer-details">
+          <div class="buyer-details" aria-label="Buyer details">
             <mat-card-content>
               <h4>Datos del Comprador</h4>
               <p><strong>Nombre:</strong> {{ transaction.buyer.name.fullName }}</p>
@@ -52,6 +52,7 @@
                 color="primary"
                 *ngIf="transaction.paymentStatus === 'PENDING'"
                 (click)="updateTransactionStatus(transaction.transactionId, 'COMPLETED')"
+                aria-label="Accept transaction"
               >
                 Aceptar
               </button>
@@ -60,6 +61,7 @@
                 color="warn"
                 *ngIf="transaction.paymentStatus === 'PENDING'"
                 (click)="updateTransactionStatus(transaction.transactionId, 'CANCELLED')"
+                aria-label="Cancel transaction"
               >
                 Cancelar
               </button>
@@ -99,7 +101,7 @@
             </mat-card-content>
           </div>
 
-          <div class="seller-details">
+          <div class="seller-details" aria-label="Seller details">
             <mat-card-content>
               <h4>Datos del Vendedor</h4>
               <p><strong>Nombre:</strong> {{ transaction.seller.name.fullName }}</p>
@@ -113,7 +115,7 @@
   </div>
 
   <!-- SIN TRANSACCIONES -->
-  <div *ngIf="filteredTransactions.length === 0" class="no-transactions">
+  <div *ngIf="filteredTransactions.length === 0" class="no-transactions" aria-label="No transactions">
     <mat-icon color="warn">info</mat-icon>
     <p>No hay transacciones disponibles para este estado.</p>
   </div>
