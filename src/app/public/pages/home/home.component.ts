@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
         this.user = data;
       },
       (error) => {
-        this.showSnackBar('Error fetching user info');
+
       }
     );
   }
